@@ -8,6 +8,10 @@
 #include "AuraPlayerController.generated.h"
 
 
+// Forward Declarations
+class UInputMappingContext;
+
+
 UCLASS()
 class AURA_API AAuraPlayerController : public APlayerController
 {
@@ -16,11 +20,18 @@ class AURA_API AAuraPlayerController : public APlayerController
 
 public:
 
+	AAuraPlayerController();
+
 
 protected:
 
+	virtual void BeginPlay() override;
+
 
 private:
+
+	UPROPERTY(EditAnywhere, Category = "Input")
+	TObjectPtr<UInputMappingContext> AuraContext;
 
 	
 };
