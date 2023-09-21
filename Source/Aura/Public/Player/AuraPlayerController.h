@@ -9,7 +9,9 @@
 
 
 // Forward Declarations
+class UInputAction;
 class UInputMappingContext;
+struct FInputActionValue;
 
 
 UCLASS()
@@ -26,6 +28,7 @@ public:
 protected:
 
 	virtual void BeginPlay() override;
+	virtual void SetupInputComponent() override;
 
 
 private:
@@ -33,5 +36,8 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Input")
 	TObjectPtr<UInputMappingContext> AuraContext;
 
-	
+	UPROPERTY(EditAnywhere, Category = "Input")
+	TObjectPtr<UInputAction> MoveAction;
+
+	void Move(const FInputActionValue& InputActionValue);
 };
