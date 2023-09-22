@@ -2,8 +2,8 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "CoreMinimal.h"
 
 #include "AuraPlayerController.generated.h"
 

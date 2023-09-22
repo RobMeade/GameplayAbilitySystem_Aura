@@ -1,7 +1,8 @@
 // Copyright Rob Meade.  All rights reserved.
 
-#include "Aura/Aura.h"
 #include "Character/AuraEnemy.h"
+
+#include "Aura/Aura.h"
 
 
 AAuraEnemy::AAuraEnemy()
