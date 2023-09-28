@@ -9,7 +9,11 @@
 
 
 // Forward Declarations
+class UAbilitySystemComponent;
+class UAttributeSet;
 class UAuraUserWidget;
+class UOverlayWidgetController;
+struct FWidgetControllerParams;
 
 
 UCLASS()
@@ -23,10 +27,12 @@ public:
 	UPROPERTY()
 	TObjectPtr<UAuraUserWidget> OverlayWidget;
 
+	UOverlayWidgetController* GetOverlayWidgetController(const FWidgetControllerParams& WidgetControllerParams);
+
+	void InitOverlay(APlayerController* InPlayerController, APlayerState* InPlayerState, UAbilitySystemComponent* InAbilitySystemComponent, UAttributeSet* InAttributeSet);
+
 
 protected:
-
-	virtual void BeginPlay() override;
 
 
 private:
@@ -34,4 +40,9 @@ private:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UAuraUserWidget> OverlayWidgetClass;
 
+	UPROPERTY()
+	TObjectPtr<UOverlayWidgetController> OverlayWidgetController;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UOverlayWidgetController> OverlayWidgetControllerClass;
 };
