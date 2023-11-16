@@ -26,7 +26,7 @@ struct AURA_API FEffectProperties
 
 public:
 
-	FEffectProperties();
+	FEffectProperties() {};
 
 	FGameplayEffectContextHandle EffectContextHandle;
 
@@ -43,16 +43,16 @@ public:
 	ACharacter* SourceCharacter = nullptr;
 
 	UPROPERTY()
-	UAbilitySystemComponent* TargetASC;
+	UAbilitySystemComponent* TargetASC = nullptr;
 
 	UPROPERTY()
-	AActor* TargetAvatarActor;
+	AActor* TargetAvatarActor = nullptr;
 
 	UPROPERTY()
-	AController* TargetController;
+	AController* TargetController = nullptr;
 
 	UPROPERTY()
-	ACharacter* TargetCharacter;
+	ACharacter* TargetCharacter = nullptr;
 };
 
 
